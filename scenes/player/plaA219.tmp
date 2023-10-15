@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://du7n30wer4vg8"]
 
-[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_xnmgw"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_kx46g"]
 [ext_resource type="Texture2D" uid="uid://bp3cmmqcbr56k" path="res://assets/sprites/Player/Sammuel.png" id="2_c7f73"]
 [ext_resource type="Script" path="res://scripts/player/PlayerSprite.gd" id="3_g4qaf"]
 [ext_resource type="PackedScene" uid="uid://bqu1s6sjtq8w2" path="res://scenes/miscelaneous/HUD.tscn" id="5_2cbvj"]
@@ -139,7 +139,9 @@ height = 64.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 y_sort_enabled = true
-script = ExtResource("1_xnmgw")
+script = ExtResource("1_kx46g")
+walk_speed = null
+run_speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." node_paths=PackedStringArray("animation", "player")]
 y_sort_enabled = true

@@ -6,6 +6,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 ####################### Export #######################
 
+@export var game_controller: GameController
+
 @export var walk_speed: float = 75
 @export var run_speed: float = 100
 
@@ -98,3 +100,12 @@ func execute_interactions():
 			"Ler":
 				bubble_text_HUD.text = "Lendo"
 				print("Abrir caixa de texto")
+		
+		match cur_interactions.interaction_type:
+			"default":
+				pass
+			"speak_carol_jumpscare":
+				if(game_controller != null):
+					if(game_controller.carol != null):
+						game_controller.carol.NPCController.hang()
+				

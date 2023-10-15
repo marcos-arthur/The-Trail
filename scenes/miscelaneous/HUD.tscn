@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqu1s6sjtq8w2"]
 
-[ext_resource type="Script" path="res://scenes/miscelaneous/HUD.gd" id="1_n8ecj"]
+[ext_resource type="Script" path="res://scripts/miscelaneous/HUD/HUD.gd" id="1_5xh72"]
 [ext_resource type="Texture2D" uid="uid://dqoamt1wy5f7k" path="res://assets/sprites/Icons/KeyE.png" id="1_ullt2"]
 [ext_resource type="FontFile" uid="uid://c5namuomveqsw" path="res://assets/fonts/PixelifySans-Regular.ttf" id="2_4otdd"]
 
@@ -16,7 +16,7 @@ shadow_size = 4
 anti_aliasing = false
 
 [node name="HUD" type="CanvasLayer"]
-script = ExtResource("1_n8ecj")
+script = ExtResource("1_5xh72")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

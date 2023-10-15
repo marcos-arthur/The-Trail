@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c567ykxyc0632"
-path="res://.godot/imported/Ryan.png-321b02651b69ab04ff2e32e29a0889bf.ctex"
+uid="uid://cfys5g1v5v7pq"
+path="res://.godot/imported/axe.png-c36674be754afa9f8d48104cbb59122d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/npcs/Ryan.png"
-dest_files=["res://.godot/imported/Ryan.png-321b02651b69ab04ff2e32e29a0889bf.ctex"]
+source_file="res://assets/sprites/Items/axe.png"
+dest_files=["res://.godot/imported/axe.png-c36674be754afa9f8d48104cbb59122d.ctex"]
 
 [params]
 

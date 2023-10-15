@@ -69,14 +69,13 @@ energy = 0.4
 texture = ExtResource("2_22b7p")
 texture_scale = 0.2
 
-[node name="CharacterBody2D" parent="." node_paths=PackedStringArray("game_controller") instance=ExtResource("2_worcd")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_worcd")]
 z_index = 4
-position = Vector2(24, 168)
-game_controller = NodePath("..")
+position = Vector2(926, 61)
 walk_speed = 50.0
 
 [node name="Dark" parent="." instance=ExtResource("3_dmn05")]
-color = Color(0, 0, 0, 1)
+color = Color(0.192157, 0.105882, 0.0862745, 1)
 
 [node name="Ryan" parent="." instance=ExtResource("5_w5b2f")]
 z_index = 4

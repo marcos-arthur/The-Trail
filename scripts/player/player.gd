@@ -27,6 +27,8 @@ var interacting: bool = false
 var is_running: bool = true
 var can_track_input: bool = true
 
+var has_axe: bool = false
+
 ####################### Base functions #######################
 
 func _ready():
@@ -79,6 +81,10 @@ func interact() -> void:
 
 func _on_area_2d_area_entered(area):
 	all_interactions.insert(0, area)
+	
+	if(all_interactions[0].interaction_type == "Death"):
+		get_tree().quit()
+	
 	update_interactions()
 
 func _on_area_2d_area_exited(area):
@@ -108,4 +114,20 @@ func execute_interactions():
 				if(game_controller != null):
 					if(game_controller.carol != null):
 						game_controller.carol.NPCController.hang()
-				
+						game_controller.show_carol_dialogue()
+			"speak_ryan":
+				if(game_controller != null):
+					game_controller.show_ryan_dialogue()
+			"get_axe":
+				has_axe = true
+				game_controller.show_axe_icon()
+				game_controller.countTimer = true
+			"break_stam":
+				if(has_axe):
+					#game_controller.show_stam_dialogue(true)
+					game_controller.stam_tile_map.queue_free()
+					game_controller.show_break_stem_dialogue()
+					$"../flesh_monster".released = true
+				else:
+					#game_controller.show_stam_dialogue(false)
+					pass

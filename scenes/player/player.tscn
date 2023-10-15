@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://du7n30wer4vg8"]
+[gd_scene load_steps=14 format=3 uid="uid://du7n30wer4vg8"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_xnmgw"]
 [ext_resource type="Texture2D" uid="uid://bp3cmmqcbr56k" path="res://assets/sprites/Player/Sammuel.png" id="2_c7f73"]
 [ext_resource type="Script" path="res://scripts/player/PlayerSprite.gd" id="3_g4qaf"]
 [ext_resource type="PackedScene" uid="uid://bqu1s6sjtq8w2" path="res://scenes/miscelaneous/HUD.tscn" id="5_2cbvj"]
 [ext_resource type="Texture2D" uid="uid://b78epso03qooo" path="res://assets/effects/light.png" id="5_8ewvm"]
+[ext_resource type="Texture2D" uid="uid://cfys5g1v5v7pq" path="res://assets/sprites/Items/axe.png" id="6_qq1no"]
 
 [sub_resource type="Animation" id="Animation_uy2wo"]
 length = 0.001
@@ -187,6 +188,32 @@ color = Color(0.631373, 0.619608, 0.941176, 1)
 energy = 0.6
 texture = ExtResource("5_8ewvm")
 texture_scale = 0.15
+
+[node name="HUD2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Axe" type="TextureRect" parent="HUD2/Control"]
+visible = false
+layout_mode = 0
+offset_left = 416.0
+offset_top = 208.0
+offset_right = 456.0
+offset_bottom = 248.0
+texture = ExtResource("6_qq1no")
+
+[node name="bruxa" type="Label" parent="HUD2/Control"]
+visible = false
+layout_mode = 0
+offset_left = 136.0
+offset_top = 24.0
+offset_right = 328.0
+offset_bottom = 50.0
+text = "A BRUXA ESTÁ CAÇANDO"
 
 [connection signal="area_entered" from="InteractionComponents/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="InteractionComponents/Area2D" to="." method="_on_area_2d_area_exited"]

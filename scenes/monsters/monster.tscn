@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbbxs1fjca8wy"]
+
+[ext_resource type="Script" path="res://scenes/monsters/monster.gd" id="1_jp72b"]
+[ext_resource type="PackedScene" uid="uid://be647fx4u6xx8" path="res://scenes/monsters/flesh_monster.tscn" id="2_3rijm"]
+
+[node name="monster" type="CharacterBody2D"]
+script = ExtResource("1_jp72b")
+
+[node name="flesh_monster" parent="." instance=ExtResource("2_3rijm")]

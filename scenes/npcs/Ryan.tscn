@@ -65,6 +65,7 @@ position = Vector2(0, -16)
 
 [node name="intereaction_area" parent="InteractionComponents" instance=ExtResource("1_1gx6j")]
 interact_text = "Falar"
+interaction_type = "speak_ryan"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, -16)

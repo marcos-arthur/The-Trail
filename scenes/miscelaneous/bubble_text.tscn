@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwpe23isv1322"]
+
+[ext_resource type="Texture2D" uid="uid://dqoamt1wy5f7k" path="res://assets/sprites/Icons/KeyE.png" id="1_3m1sm"]
+[ext_resource type="Script" path="res://scripts/miscelaneous/HUD/bubble_text.gd" id="1_e0ipf"]
+[ext_resource type="FontFile" uid="uid://c5namuomveqsw" path="res://assets/fonts/PixelifySans-Regular.ttf" id="2_4t0et"]
+[ext_resource type="Texture2D" uid="uid://b78epso03qooo" path="res://assets/effects/light.png" id="4_j83xw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crk5c"]
+bg_color = Color(0.745098, 0.552941, 0.388235, 1)
+border_color = Color(0.835294, 0.835294, 0.835294, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.505882)
+shadow_size = 4
+anti_aliasing = false
+
+[node name="bubble_text" type="Control"]
+z_index = 15
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e0ipf")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 43.0
+offset_bottom = 19.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_crk5c")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_3m1sm")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0823529, 0.105882, 0.0901961, 1)
+theme_override_fonts/font = ExtResource("2_4t0et")
+theme_override_font_sizes/font_size = 11
+text = ":0"
+vertical_alignment = 1
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(48, 8)
+rotation = -3.14159
+scale = Vector2(33.5424, -8.50677)
+color = Color(0.631373, 0.619608, 0.941176, 1)
+texture = ExtResource("4_j83xw")
+texture_scale = 0.01

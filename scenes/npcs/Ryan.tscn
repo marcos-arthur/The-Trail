@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://b2mugnojkoqj0"]
+
+[ext_resource type="PackedScene" uid="uid://bsynq2bujop6m" path="res://scenes/miscelaneous/intereaction_area.tscn" id="1_1gx6j"]
+[ext_resource type="Texture2D" uid="uid://buuk2wvjj6wnw" path="res://assets/sprites/Player/Ryan.png" id="1_henv5"]
+[ext_resource type="Script" path="res://scripts/NPC/NPC.gd" id="1_tok42"]
+[ext_resource type="Texture2D" uid="uid://b78epso03qooo" path="res://assets/effects/light.png" id="2_o2sys"]
+[ext_resource type="Script" path="res://scripts/NPC/NPCController.gd" id="3_qhuqp"]
+
+[sub_resource type="Animation" id="Animation_r5je1"]
+resource_name = "Idle"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_4c4mm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b7l5d"]
+_data = {
+"Idle": SubResource("Animation_r5je1"),
+"RESET": SubResource("Animation_4c4mm")
+}
+
+[node name="Ryan" type="CharacterBody2D"]
+script = ExtResource("1_tok42")
+
+[node name="Sprite2D" type="Sprite2D" parent="." node_paths=PackedStringArray("animation")]
+texture = ExtResource("1_henv5")
+offset = Vector2(0, -15)
+hframes = 5
+script = ExtResource("3_qhuqp")
+animation = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_b7l5d")
+}
+
+[node name="InteractionComponents" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, -16)
+
+[node name="intereaction_area" parent="InteractionComponents" instance=ExtResource("1_1gx6j")]
+interact_text = "Falar"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -16)
+energy = 0.4
+texture = ExtResource("2_o2sys")
+texture_scale = 0.2

@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqu1s6sjtq8w2"]
+
+[ext_resource type="Script" path="res://scenes/miscelaneous/HUD.gd" id="1_n8ecj"]
+[ext_resource type="Texture2D" uid="uid://dqoamt1wy5f7k" path="res://assets/sprites/Icons/KeyE.png" id="1_ullt2"]
+[ext_resource type="FontFile" uid="uid://c5namuomveqsw" path="res://assets/fonts/PixelifySans-Regular.ttf" id="2_4otdd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrntt"]
+bg_color = Color(0.745098, 0.552941, 0.388235, 1)
+border_color = Color(0.835294, 0.835294, 0.835294, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.505882)
+shadow_size = 4
+anti_aliasing = false
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_n8ecj")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 272.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 59.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mrntt")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_ullt2")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0823529, 0.105882, 0.0901961, 1)
+theme_override_fonts/font = ExtResource("2_4otdd")
+theme_override_font_sizes/font_size = 11
+text = ":0"
+vertical_alignment = 1

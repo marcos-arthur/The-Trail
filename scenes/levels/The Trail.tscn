@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c7wpk3ly6jj4a"]
+[gd_scene load_steps=14 format=3 uid="uid://c7wpk3ly6jj4a"]
 
 [ext_resource type="Script" path="res://scripts/GameController.gd" id="1_e1unr"]
 [ext_resource type="Texture2D" uid="uid://b78epso03qooo" path="res://assets/effects/light.png" id="2_22b7p"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://c6c1o7w0ehfmn" path="res://assets/sprites/npcs/Ryan/ryan_dead.png" id="9_2ioiw"]
 [ext_resource type="PackedScene" uid="uid://bs1nyddy7tliy" path="res://scenes/npcs/Carol.tscn" id="10_clh3j"]
 [ext_resource type="PackedScene" uid="uid://be647fx4u6xx8" path="res://scenes/monsters/flesh_monster.tscn" id="12_ovoqm"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qmoxq"]
 
 [node name="The Trail" type="Node2D"]
 y_sort_enabled = true
@@ -159,3 +161,25 @@ fit_content = true
 z_index = 5
 position = Vector2(1552, 136)
 scale = Vector2(2.6, 2.6)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-34, 163)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(33, -164)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_qmoxq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(33, 110)
+shape = SubResource("WorldBoundaryShape2D_qmoxq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1690, -25)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_qmoxq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(33, 10)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_qmoxq")
